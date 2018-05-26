@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			nav{
+				width: 300px;
+				height: 100px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, table, th, td {
+				margin:0; padding:0;}  
+			nav ul{
+				width: 80%;
+				margin: 0 auto;
+				overflow: hidden;				
+			}
+			nav ul li{				
+				width: 20%;
+				margin: 0 auto;
+				text-align: center;
+				display: inline-block;
+				margin-right: -6px;				
+				transition: color 1s ease-out; 
+			}
+			.on:after{
+				width: 30px;				
+			}
+			li:after{
+				content: '';
+				width: 0px;
+				height: 2px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				transition: 0.5s;
+				background-color: lightskyblue;
+			}
+			li:hover{
+				color: blue;
+			}
+			input{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}						
+		</style>
+		<script type="text/javascript">
+			function $(id){
+				return typeof id==='string'?document.getElementById(id):id;
+			}			
+			function dj(){
+					var Ul=$('off').getElementsByTagName('li');					
+					for(var i=0;i<Ul.length;i++){
+						if(Ul[i].className===''){
+							Ul[i].className='on';
+							Ul[i].style.color='slateblue';
+						}else{
+							Ul[i].className='';
+							Ul[i].style.color='';
+						}
+					}
+				}
+//			window.onload=function(){		
+//				var Ul=$('off').getElementsByTagName('li');
+//				for(var i=0;i<Ul.length;i++) {					
+//					Ul[i].onclick=function(){
+//						for (var j=0;j<Ul.length;j++) {							
+//								Ul[j].className='';						
+//						}
+//						this.className='on';						
+//					}					
+//				}
+//			}
+		</script>
+	</head>
+	<body>
+		<nav>
+			<ul class="off" id="off">
+				<li>首页</li>
+				<li>论坛</li>
+				<li>详情</li>
+				<li>社团</li>
+				<li>随便</li>
+			</ul>
+		</nav>
+		<input type="button" value="点击测试" onclick="javascript:dj();" />
+	</body>
+</html>
